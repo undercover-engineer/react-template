@@ -1,69 +1,56 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + Tailwind Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get React working in Vite with Tailwind CSS, along with Prettier and ESLint for code formatting and linting.
 
-Currently, two official plugins are available:
+## Features
+- React 19
+- Tailwind CSS version 4
+- Vite for fast development and build process
+- Prettier for code formatting
+- ESLint for code linting and quality checks
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requirements
 
-## Expanding the ESLint configuration
+To run this project, you must have the following installed:
+- Node.js version 20 or higher
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd <project-directory>
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+2. **Install dependencies**:
+Ensure you are using Node.js version 20 or higher. If you don't have it, install it from here.
+Then, run:
+    ```bash
+    npm install
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **Run the development server**
+After the dependencies are installed, start the project with:
+    ```bash
+    npm run dev
+    ```
+This will start the development server, and you should be able to access the app at http://localhost:5173.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Code Formatting and Linting
+Prettier: This template is configured with Prettier to automatically format your code. You can format your code by running:
+  ```bash
+  npm run lint
+  ```  
+    
+ESLint: ESLint is set up to catch any code issues or inconsistencies. You can run ESLint with the following command:
+  ```bash
+  npm run lint
+  ```
+It’s recommended to integrate ESLint into your code editor to automatically highlight issues as you work.
+If any issues arise, you can fix them using the following command
+  ```bash
+  npm run lint -- --fix
+  ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Final Notes
+Update Packages Regularly - Always check in on your project to ensure packages aren’t deprecated and that updates don’t break your project
+Remove the .git File When Cloning - This ensures that your changes to your new project don’t affect the template’s remote repo
